@@ -4,7 +4,39 @@
     ViewData["Title"] = "Home page";
 }
 
+@using System.Security.Principal;
+@{
+    String fullName = User.Identity?.Name;
+    String displayName = "";
+    if (fullName.Contains("@"))
+    {
+        displayName = fullName.Substring(0, fullName.IndexOf("@"));
+    }
+}
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome @displayName!</h1>
+    <p></p>
+    <div class="row">
+        <div class="col">
+            <div class="border">
+                <h3 class="border-bottom"><a class="link-dark nav-link" href="/Personal">Personal Information</a></h3>
+                <ul class="text-start">
+                    <li>View personal information</li>
+                    <li>Update information</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <div class="border">
+                <h3 class="border-bottom"><a class="link-dark nav-link" href="/Training">Training Plan</a></h3>
+                <ul class="text-start">
+                    <li>View active plan</li>
+                    <li>View plan history</li>
+                    <li>Create plan</li>
+                    <li>Update active plan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
