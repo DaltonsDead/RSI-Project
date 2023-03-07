@@ -3,3 +3,33 @@
 @{
     ViewData["Title"] = "Training Plan Information";
 }
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+    <p></p>
+    <div class="row text-start justify-content-center">
+        <div class="col-2">
+            <p>Training Plan ID</p>
+            <p>Medium</p>
+            <p>Description</p>
+            <p>Start Date</p>
+            <p>Status</p>
+        </div>
+        <div class="col-3">
+            <p>trainingPlanID</p>
+            <asp:DropDownList id="mediumList" runat="server">
+                <asp:ListItem value="test1"></asp:ListItem>
+                /*
+                    foreach(string medium in medium array)
+                    <asp:ListItem value="mediumID">mediumName</asp:ListItem>
+                
+                */
+            </asp:DropDownList>
+            <p>description</p>
+            <p>startDate</p>
+            <p>statusName</p>
+            <input type="button" value="Save" />
+            <input type="button" value="Cancel" />
+        </div>
+    </div>
+</div>
