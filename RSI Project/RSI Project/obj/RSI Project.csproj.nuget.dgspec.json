@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dalton\\source\\repos\\RSI Project\\RSI Project\\RSI Project.csproj": {}
+    "C:\\Users\\aster\\Source\\Repos\\RSI-Project\\RSI Project\\RSI Project\\RSI Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dalton\\source\\repos\\RSI Project\\RSI Project\\RSI Project.csproj": {
+    "C:\\Users\\aster\\Source\\Repos\\RSI-Project\\RSI Project\\RSI Project\\RSI Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dalton\\source\\repos\\RSI Project\\RSI Project\\RSI Project.csproj",
+        "projectUniqueName": "C:\\Users\\aster\\Source\\Repos\\RSI-Project\\RSI Project\\RSI Project\\RSI Project.csproj",
         "projectName": "RSI Project",
-        "projectPath": "C:\\Users\\Dalton\\source\\repos\\RSI Project\\RSI Project\\RSI Project.csproj",
-        "packagesPath": "C:\\Users\\Dalton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dalton\\source\\repos\\RSI Project\\RSI Project\\obj\\",
+        "projectPath": "C:\\Users\\aster\\Source\\Repos\\RSI-Project\\RSI Project\\RSI Project\\RSI Project.csproj",
+        "packagesPath": "C:\\Users\\aster\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aster\\Source\\Repos\\RSI-Project\\RSI Project\\RSI Project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dalton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aster\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
