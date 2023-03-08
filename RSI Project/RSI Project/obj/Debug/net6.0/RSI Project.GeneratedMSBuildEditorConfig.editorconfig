@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\aster\Source\Repos\RSI-Project\RSI Project\RSI Project
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/aster/Source/Repos/RSI-Project/RSI Project/RSI Project/Pages/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/aster/Source/Repos/RSI-Project/RSI Project/RSI Project/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
