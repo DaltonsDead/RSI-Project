@@ -1,4 +1,40 @@
 ﻿@page
 @model RSI_Project.Pages.AdminModel
 @{
+    ViewData["Title"] = "Admin";
 }
+
+<div class="text-center">
+    <h1>@ViewData["Title"]</h1>
+    <p></p>
+    <div class="row">
+        <div class="row">
+            <h2>Employees in Lab</h2>
+            <table class="table table-striped">
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Region</th>
+                    <th>Practice Area</th>
+                    <th>&nbsp</th>
+                </tr>
+
+                <tr>
+                    <form>
+                        <td>388970</td>
+                        <td>Kale</td>
+                        <td>Chips</td>
+                        <td>NE</td>
+                        <td>Database</td>
+                        <td><input type="submit" value="Remove" /></td>
+                    </form>
+                    
+                </tr>
+            </table>
+        </div>
+        <div class="col-3">
+            
+        </div>
+    </div>
+</div>

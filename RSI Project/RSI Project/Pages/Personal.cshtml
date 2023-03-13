@@ -2,6 +2,7 @@
 @model WebApplication2.Pages.PersonalModel
 @{
     ViewData["Title"] = "Personal Information";
+    String skillsDisplay = "SQL, Java, Agile";
 }
 
 <div class="text-center">
@@ -13,12 +14,24 @@
             <p>First Name</p>
             <p>Last Name</p>
             <p>Email</p>
+            <p>Skills</p>
         </div>
         <div class="col-3">
             <p>employeeID</p>
             <p>firstName</p>
             <p>lastName</p>
             <p>email</p>
+            <p>@skillsDisplay</p>
+            <form id="personalSkills">
+                <select>
+                    <option value="skill1">Skill 1</option>
+                    <option value="skill2">Skill 2</option>
+                    <option value="skill3">Skill 3</option>
+                    <option value="skill4">Skill 4</option>
+                    <option value="skill5">Skill 5</option>
+                </select>
+                <input type="submit" value="Add" />
+            </form>
         </div>
     </div>
 </div>
