@@ -2,7 +2,6 @@
 @model WebApplication2.Pages.PersonalModel
 @{
     ViewData["Title"] = "Personal Information";
-    String skillsDisplay = "SQL, Java, Agile";
 }
 
 <div class="text-center">
@@ -21,7 +20,23 @@
             <p>firstName</p>
             <p>lastName</p>
             <p>email</p>
-            <p>@skillsDisplay</p>
+            <table class="table table-striped">
+                <tr>
+                    <th>Skill</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <!--
+                        foreach (String skillName in skillsArray) {
+                            <td>skillName</td>
+                            <form>
+                                <td><input type="submit" value="Remove" /></td>
+                        }
+                    -->
+                    <td>SQL</td>
+                    <td><input type="submit" value="Remove" /></td>
+                </tr>
+            </table>
             <form id="personalSkills">
                 <select>
                     <option value="skill1">Skill 1</option>

@@ -2,7 +2,10 @@
 @model RSI_Project.Pages.ViewUpdateCreateActiveTrainingModel
 @{
     ViewData["Title"] = "View Training Plan";
-    String visible = "hidden";
+    var num = new Random();
+    int choice = num.Next(3);
+    String[] arr = { "activePlan", "noActive", "notInLabs" };
+    String visible = arr[choice];
 }
 
 
@@ -11,107 +14,58 @@
     <br />
 </div>
 
-<!--If the employee has an active training plan-->
-<div class="row text-start justify-content-center" >
-    <div class="col-2">
-        <p>Training Plan ID</p>
-        <p>Medium</p>
-        <p>Description</p>
-        <p>Start Date</p>
-        <p>Status</p>
-    </div>
-    <div class="col-3">
-        <form id="trainingPlan">
-            <p>trainingPlanID</p>
-            <p>media</p>
-            <p>description</p>
-            <p>startDate</p>
-            <p>status</p>
-            <br />
-            <input type="submit" value="Edit" />
-            <input type="button" value="Mark Complete" />
-            <br />
+
+
+
+@{
+    if (visible == "activePlan")
+    {
+        <!--If the employee has an active training plan-->
+        <div class="row text-start justify-content-center" >
+            <div class="col-2">
+                <p>Training Plan ID</p>
+                <p>Medium</p>
+                <p>Description</p>
+                <p>Start Date</p>
+                <p>Status</p>
+            </div>
+            <div class="col-3">
+                <form id="trainingPlan">
+                    <p>trainingPlanID</p>
+                    <p>media</p>
+                    <p>description</p>
+                    <p>startDate</p>
+                    <p>status</p>
+                    <br />
+                    <input type="submit" value="Edit" />
+                    <input type="button" value="Mark Complete" />
+                    <br />
+                    <br />
+                    <a href="/TrainingHistory">View Training Plan History</a>
+                </form>
+            </div>
+        </div>
+    }
+    else if (visible == "noActive")
+    {
+        <!--If the employee does not have a plan active-->
+        <div>
+            <p>No training plan active.</p>
+            <a href="/AddUpdateTrainingPlan">Create Plan</a>
             <br />
             <a href="/TrainingHistory">View Training Plan History</a>
-        </form>
-    </div>
-</div>
+        </div>
+    }
+    else if (visible == "notInLabs")
+    {
+        <!--If the employee is not in labs (& doesn't have an active plan)-->
+        <div @visible>
+            <p>No training plan active. Unable to create a plan at this time.</p>
+            <a href="/TrainingHistory">View Training Plan History</a>
+        </div>
+    }
+}
 
 
 
-<!--If the employee does not have a plan active-->
-<div @visible>
-    <p>No training plan active.</p>
-    <a href="">Create Plan</a>
-    <br />
-    <a href="/TrainingHistory">View Training Plan History</a>
-</div>
 
-
-
-<br />
-<br />
-<br />
-<br />
-
-<!--If the employee is not in labs (& doesn't have an active plan)-->
-<div @visible>
-    <p>No training plan active. Unable to create a plan at this time.</p>
-    <a href="/TrainingHistory">View Training Plan History</a>
-</div>
-
-
-<br />
-<br />
-<br />
-<br />
-
-<!--Training Plan Create/Edit-->
-<div class="row text-start justify-content-center" @visible>
-    <div class="col-2">
-        <p>Training Plan ID</p>
-        <p>Medium</p>
-        <p>Description</p>
-        <p>Start Date</p>
-        <p>Status</p>
-    </div>
-    <div class="col-3">
-        <form id="trainingPlan">
-            <p>trainingPlanID</p>
-            <select id="media">
-                <option value="test1">test1</option>
-                <option value="test2">test2</option>
-                <option value="test3">test3</option>
-                <!--
-                    for (int i = 0; i < mediumTableArray.GetLength(0); i++) {
-                        <option value=mediumTableArray[0][i]>mediumTableArray[1][i]</option>
-                    }
-                    2 rows with many columns
-                    For each medium in the media table,
-                    create an option in a dropdown list.
-                -->
-            </select>
-            <p>description</p>
-            <p>startDate</p>
-            <select id="status">
-                <option value="test1">test1</option>
-                <option value="test2">test2</option>
-                <option value="test3">test3</option>
-                <!--
-                    for (int i = 0; i < statusTableArray.GetLength(0); i++) {
-                        <option value=statusTableArray[0][i]>statusTableArray[1][i]</option>
-                    }
-                    2 rows with many columns
-                    For each status in the status table,
-                    create an option in a dropdown list.
-                -->
-            </select>
-            <br />
-            <br />
-            <input type="submit" value="Save" />
-            <input type="button" value="Cancel"/>
-        </form>
-    </div>
-    <br />
-    <a href="/TrainingHistory">View Training Plan History</a>
-</div>
