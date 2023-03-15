@@ -49,7 +49,7 @@
     else if (visible == "noActive")
     {
         <!--If the employee does not have a plan active-->
-        <div>
+        <div class="text-center">
             <p>No training plan active.</p>
             <a href="/AddUpdateTrainingPlan">Create Plan</a>
             <br />
@@ -59,7 +59,7 @@
     else if (visible == "notInLabs")
     {
         <!--If the employee is not in labs (& doesn't have an active plan)-->
-        <div @visible>
+        <div class="text-center">
             <p>No training plan active. Unable to create a plan at this time.</p>
             <a href="/TrainingHistory">View Training Plan History</a>
         </div>
