@@ -12,7 +12,7 @@ namespace RSI_Project.Pages
         {
             try
             {
-                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
