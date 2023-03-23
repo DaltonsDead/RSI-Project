@@ -9,7 +9,7 @@
     <p></p>
     <div class="row">
         <div class="row">
-            <h2>Employees in Lab</h2>
+            <h2>Employees</h2>
             <p>&nbsp;</p>
             <form>
                 <input type="search" placeholder="Employee ID ex: 000000" />
@@ -17,28 +17,32 @@
             </form>
             <p>&nbsp;</p>
             <table class="table table-striped">
-                <tr>
-                    <th>Employee ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Region</th>
-                    <th>Practice Area</th>
-                    <th>Active Plan</th>
-                    <th>&nbsp</th>
-                </tr>
-
-                <tr>
-                    <form>
-                        <td>388970</td>
-                        <td>Kale</td>
-                        <td>Chips</td>
-                        <td>NE</td>
-                        <td>Database</td>
-                        <td><a href="" onclick="return confirm('This is where training plan information will be displayed.');">View Plan</a></td>
-                        <td><input type="submit" value="Remove" /></td>
-                    </form>
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Region</th>
+                        <th>Practice Area</th>
+                        <th>user type</th>
+                        <th>email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var employee in Model.employeeList)
+                    {
+                        <tr>
+                            <td>@employee.employeeID</td>
+                            <td>@employee.fName</td>
+                            <td>@employee.lName</td>
+                            <td>@employee.regionID</td>
+                            <td>@employee.practiceArea</td>
+                            <td>@employee.userType</td>
+                            <td>@employee.email</td>
+                        </tr>
+                    }
+                </tbody>
                     
-                </tr>
             </table>
         </div>
     </div>

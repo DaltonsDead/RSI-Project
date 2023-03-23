@@ -123,3 +123,74 @@ C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\obj\
 C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.pdb
 C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.genruntimeconfig.cache
 C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\obj\Debug\net6.0\ref\RSI Project.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\appsettings.Development.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\appsettings.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\RSI Project.staticwebassets.runtime.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\RSI Project.exe
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\RSI Project.deps.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\RSI Project.runtimeconfig.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\RSI Project.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\RSI Project.pdb
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Azure.Core.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Azure.Identity.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Azure.Security.KeyVault.Certificates.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Web.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Web.Certificate.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Web.Certificateless.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Web.TokenCache.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Web.UI.Views.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Identity.Web.UI.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.IdentityModel.Validators.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\System.Data.SqlClient.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.csproj.AssemblyReference.cache
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.GeneratedMSBuildEditorConfig.editorconfig
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.AssemblyInfoInputs.cache
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.AssemblyInfo.cs
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.csproj.CoreCompileInputs.cache
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.MvcApplicationPartsAssemblyInfo.cs
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.MvcApplicationPartsAssemblyInfo.cache
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.RazorAssemblyInfo.cache
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.RazorAssemblyInfo.cs
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets\msbuild.RSI Project.Microsoft.AspNetCore.StaticWebAssets.props
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets\msbuild.build.RSI Project.props
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.RSI Project.props
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.RSI Project.props
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets.pack.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets.build.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\staticwebassets.development.json
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\scopedcss\bundle\RSI Project.styles.css
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\scopedcss\projectbundle\RSI Project.bundle.scp.css
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.csproj.CopyComplete
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\refint\RSI Project.dll
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.pdb
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\RSI Project.genruntimeconfig.cache
+D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\obj\Debug\net6.0\ref\RSI Project.dll
