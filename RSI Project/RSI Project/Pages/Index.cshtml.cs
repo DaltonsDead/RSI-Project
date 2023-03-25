@@ -13,10 +13,8 @@ namespace RSI_Project.Pages
             _logger = logger;
         }
 
-        public EmployeeInfo employee = new EmployeeInfo();
         public void OnGet()
         {
-            DatabaseMethods.pullSingleEmployeeInfo(employee, email: User.Identity.Name);
         }
     }
 }

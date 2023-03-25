@@ -8,10 +8,11 @@ namespace RSI_Project.Pages
     public class AdminModel : PageModel
     {
         public List<EmployeeInfo> employeeList = new List<EmployeeInfo>();
+        public EmployeeInfo employeeUser = new EmployeeInfo();
         public void OnGet()
         {
             DatabaseMethods.pullAllEmployeeInfo(employeeList);
-
+            DatabaseMethods.pullSingleEmployeeInfo(employeeUser, email: User.Identity.Name);
         }
     }
 }
