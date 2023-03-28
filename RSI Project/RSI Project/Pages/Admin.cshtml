@@ -36,8 +36,27 @@
                             <td>@employee.employeeID</td>
                             <td class="text-start">@employee.lName</td>
                             <td class="text-start">@employee.fName</td>
-                            <td>@employee.regionID</td>
-                            <td>@employee.practiceArea</td>
+                            <!--if region = 1, print NE ...-->
+                            @switch (@employee.regionID)
+                            {
+                                case 1:
+                                    <td>NE</td>
+                                    break;
+                                case 2:
+                                    <td>NW</td>
+                                    break;
+                                case 3:
+                                    <td>CE</td>
+                                    break;
+                                case 4:
+                                    <td>SE</td>
+                                    break;
+                                case 5:
+                                    <td>SW</td>
+                                    break;
+
+                            }
+                            <td>@Model.GetPracticeAreaName(employee.practiceArea)</td>
                             <td>@employee.userType</td>
                             <td class="text-start">@employee.email</td>
                         </tr>

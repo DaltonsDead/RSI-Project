@@ -60,13 +60,13 @@ namespace RSI_Project.Classes
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    using(SqlCommand selectEmployeeByEmail = new SqlCommand("selectByEmail", connection))
+                    using (SqlCommand selectEmployeeByEmail = new SqlCommand("selectByEmail", connection))
                     {
                         selectEmployeeByEmail.CommandType = CommandType.StoredProcedure;
                         selectEmployeeByEmail.Parameters.Add(new SqlParameter("@email", email));
-                        using(SqlDataReader reader = selectEmployeeByEmail.ExecuteReader())
+                        using (SqlDataReader reader = selectEmployeeByEmail.ExecuteReader())
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
                                 employee.userType = reader.GetInt32(1);
                                 employee.regionID = reader.GetInt32(2);
@@ -84,6 +84,74 @@ namespace RSI_Project.Classes
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static List<PracticeArea> pullPracticeAreas()
+        {
+            List<PracticeArea> practiceAreas = new List<PracticeArea>();
+            PracticeArea practiceArea = new PracticeArea();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand allPracticeAreas = new SqlCommand("allPracticeAreas", connection))
+                    {
+                        allPracticeAreas.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = allPracticeAreas.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                practiceArea.practiceAreaID = reader.GetInt32(0);
+                                practiceArea.practiceAreaName = reader.GetString(1);
+
+                                practiceAreas.Add(practiceArea);
+                            }
+                        }
+                    }
+                    connection.Close();
+                    return practiceAreas;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return practiceAreas;
+            }
+        }
+
+        public static PracticeArea pullPracticeAreaByID(int ID)
+        {
+            PracticeArea practiceArea = new PracticeArea();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand practiceAreaByID = new SqlCommand("selectPracticeAreaByID", connection))
+                    {
+                        practiceAreaByID.CommandType = CommandType.StoredProcedure;
+                        practiceAreaByID.Parameters.Add(new SqlParameter("@practiceAreaID", ID));
+                        using (SqlDataReader reader = practiceAreaByID.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                practiceArea.practiceAreaID = reader.GetInt32(0);
+                                practiceArea.practiceAreaName = reader.GetString(1);
+                            }
+                        }
+                    }
+                    connection.Close();
+                    return practiceArea;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return practiceArea;
             }
         }
     }

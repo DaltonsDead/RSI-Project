@@ -14,5 +14,10 @@ namespace RSI_Project.Pages
             DatabaseMethods.pullAllEmployeeInfo(employeeList);
             DatabaseMethods.pullSingleEmployeeInfo(employeeUser, email: User.Identity.Name);
         }
+
+        public string GetPracticeAreaName(int practiceAreaID)
+        {
+            return DatabaseMethods.pullPracticeAreaByID(practiceAreaID).practiceAreaName;
+        }
     }
 }
