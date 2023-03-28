@@ -17,7 +17,15 @@ namespace RSI_Project.Pages
 
         public string GetPracticeAreaName(int practiceAreaID)
         {
-            return DatabaseMethods.pullPracticeAreaByID(practiceAreaID).practiceAreaName;
+            try 
+            {
+                return DatabaseMethods.pullPracticeAreaByID(practiceAreaID).practiceAreaName;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                return "None";
+            }
         }
     }
 }

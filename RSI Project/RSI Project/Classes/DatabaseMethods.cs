@@ -32,6 +32,7 @@ namespace RSI_Project.Classes
                                 employeeInfo.fName = reader.GetString(5);
                                 employeeInfo.lName = reader.GetString(6);
                                 employeeInfo.email = reader.GetString(7);
+                                employeeInfo.inLabs = reader.GetSqlBinary(8);
 
                                 employeeList.Add(employeeInfo);
 
@@ -75,6 +76,7 @@ namespace RSI_Project.Classes
                                 employee.fName = reader.GetString(5);
                                 employee.lName = reader.GetString(6);
                                 employee.email = reader.GetString(7);
+                                employee.inLabs = reader.GetSqlBinary(8);
                             }
                         }
                     }

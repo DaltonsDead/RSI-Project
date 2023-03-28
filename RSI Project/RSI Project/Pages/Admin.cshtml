@@ -14,8 +14,11 @@
             <p>&nbsp;</p>
             <form>
                 <input type="search" placeholder="Employee ID ex: 000000" />
-                <input type="submit" value="Add Employee" />
+                <input type="submit" value="Search" />
+                <input type="button" value="Add">
+                <input type="button" value="Remove">
             </form>
+            
             <p>&nbsp;</p>
             <table id="adminEmployeeTable" class="table table-striped">
                 <thead>
@@ -24,8 +27,9 @@
                         <th class="text-start" onclick="sortTable(1)">Last Name</th>
                         <th class="text-start" onclick="sortTable(2)">First Name</th>
                         <th onclick="sortTable(3)">Region</th>
-                        <th onclick="sortTable(4)">Practice Area</th>
-                        <th onclick="sortTable(5)">User Type</th>
+                        <th onclick="sortTable(4)">In Labs</th>
+                        <th onclick="sortTable(5)">Practice Area</th>
+                        <th onclick="sortTable(6)">User Type</th>
                         <th class="text-start" onclick="sortTable(6)">Email</th>
                     </tr>
                 </thead>
@@ -36,7 +40,6 @@
                             <td>@employee.employeeID</td>
                             <td class="text-start">@employee.lName</td>
                             <td class="text-start">@employee.fName</td>
-                            <!--if region = 1, print NE ...-->
                             @switch (@employee.regionID)
                             {
                                 case 1:
@@ -55,6 +58,14 @@
                                     <td>SW</td>
                                     break;
 
+                            }
+                            @if (employee.inLabs.Value[0]==0)
+                            {
+                                <td>No</td>
+                            }
+                            else
+                            {
+                                <td>Yes</td>
                             }
                             <td>@Model.GetPracticeAreaName(employee.practiceArea)</td>
                             <td>@employee.userType</td>
