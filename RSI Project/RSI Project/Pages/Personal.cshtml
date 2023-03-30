@@ -33,8 +33,10 @@
                                 <td><input type="submit" value="Remove" /></td>
                         }
                     -->
-                    <td>SQL</td>
-                    <td><input type="submit" value="Remove" /></td>
+                    @foreach (var skill in Model.skills)
+                    {
+                        <td>@skill.skillName</td>
+                    }
                 </tr>
             </table>
             <form id="personalSkills">

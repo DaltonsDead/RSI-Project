@@ -12,6 +12,6 @@ namespace RSI_Project.Classes
         public string fName;
         public string lName;
         public string email;
-        
+        public int empIntID;
     }
 }
