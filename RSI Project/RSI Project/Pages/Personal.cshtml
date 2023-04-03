@@ -2,6 +2,7 @@
 @model WebApplication2.Pages.PersonalModel
 @{
     ViewData["Title"] = "Personal Information";
+    string skillsString = "";
 }
 
 <div class="text-center">
@@ -20,35 +21,18 @@
             <p>@Model.employee.fName</p>
             <p>@Model.employee.lName</p>
             <p>@Model.employee.email</p>
-            <table class="table table-striped">
-                <tr>
-                    <th>Skill</th>
-                    <th>&nbsp;</th>
-                </tr>
-                <tr>
-                    <!--
-                        foreach (String skillName in skillsArray) {
-                            <td>skillName</td>
-                            <form>
-                                <td><input type="submit" value="Remove" /></td>
-                        }
-                    -->
-                    @foreach (var skill in Model.skills)
-                    {
-                        <td>@skill.skillName</td>
-                    }
-                </tr>
-            </table>
-            <form id="personalSkills">
-                <select>
-                    <option value="skill1">Skill 1</option>
-                    <option value="skill2">Skill 2</option>
-                    <option value="skill3">Skill 3</option>
-                    <option value="skill4">Skill 4</option>
-                    <option value="skill5">Skill 5</option>
-                </select>
-                <input type="submit" value="Add" />
-            </form>
+            @foreach (var skill in Model.skills)
+            {
+                if (skill.Equals(Model.skills.Last()))
+                {
+                    skillsString += skill.skillName;
+                }
+                else
+                {
+                    skillsString += skill.skillName + ", ";
+                }
+            }
+            <p>@skillsString</p>
         </div>
     </div>
 </div>
