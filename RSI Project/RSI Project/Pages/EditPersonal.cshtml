@@ -25,26 +25,21 @@
                     <th>Skill</th>
                     <th>&nbsp;</th>
                 </tr>
-                <tr>
-                    <!--
-                        foreach (String skillName in skillsArray) {
-                            <td>skillName</td>
-                            <form>
-                                <td><input type="submit" value="Remove" /></td>
-                        }
-                    -->
-                    <td>SQL</td>
-                    <td><input type="submit" value="Remove" /></td>
-                </tr>
+                @foreach (var skill in Model.skills)
+                {
+                    <tr>
+                        <td>@skill.skillName</td>
+                        <td><input type="submit" value="Remove" /></td>
+                    </tr>
+                }
             </table>
             <form id="personalSkills">
                 <select>
-                    <option value="skill1">Skill 1</option>
-                    <option value="skill2">Skill 2</option>
-                    <option value="skill3">Skill 3</option>
-                    <option value="skill4">Skill 4</option>
-                    <option value="skill5">Skill 5</option>
-                </select>
+                    @foreach (var unasSkill in Model.unasSkills)
+                    {
+                        <option value="@unasSkill.skillID">@unasSkill.skillName</option>
+                    }
+            </select>
                 <input type="submit" value="Add" />
             </form>
         </div>

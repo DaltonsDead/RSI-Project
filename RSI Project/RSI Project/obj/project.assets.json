@@ -2637,26 +2637,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aster\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Dalton\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aster\\Source\\Repos\\DaltonsDead\\RSI-Project\\RSI Project\\RSI Project\\RSI Project.csproj",
+      "projectUniqueName": "D:\\College\\Spring 2023\\Advanced Programing Topics\\Project1\\RSI-1\\Git\\RSI Project\\RSI Project\\RSI Project.csproj",
       "projectName": "RSI Project",
-      "projectPath": "C:\\Users\\aster\\Source\\Repos\\DaltonsDead\\RSI-Project\\RSI Project\\RSI Project\\RSI Project.csproj",
-      "packagesPath": "C:\\Users\\aster\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aster\\Source\\Repos\\DaltonsDead\\RSI-Project\\RSI Project\\RSI Project\\obj\\",
+      "projectPath": "D:\\College\\Spring 2023\\Advanced Programing Topics\\Project1\\RSI-1\\Git\\RSI Project\\RSI Project\\RSI Project.csproj",
+      "packagesPath": "C:\\Users\\Dalton\\.nuget\\packages\\",
+      "outputPath": "D:\\College\\Spring 2023\\Advanced Programing Topics\\Project1\\RSI-1\\Git\\RSI Project\\RSI Project\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\aster\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Dalton\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2664,7 +2657,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2729,7 +2721,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

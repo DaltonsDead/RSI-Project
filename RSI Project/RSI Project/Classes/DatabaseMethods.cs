@@ -192,6 +192,40 @@ namespace RSI_Project.Classes
                 Console.WriteLine(ex.Message);
             }
         }
-        
+
+        public static void pullUnassignedSkills(List<Skills> skillList, int ID)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand selectUnassignedSkills = new SqlCommand("getUnassignedSkills", connection))
+                    {
+                        selectUnassignedSkills.CommandType = CommandType.StoredProcedure;
+                        selectUnassignedSkills.Parameters.Add(new SqlParameter("@ID", ID));
+                        using (SqlDataReader reader = selectUnassignedSkills.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Skills skills = new Skills();
+                                skills.skillID = reader.GetInt32(0);
+                                skills.skillName = reader.GetString(1);
+
+                                skillList.Add(skills);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }
