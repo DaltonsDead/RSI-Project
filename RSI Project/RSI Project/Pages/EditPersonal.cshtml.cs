@@ -16,10 +16,5 @@ namespace RSI_Project.Pages
             DatabaseMethods.pullEmployeeSkills(skills, employee.empIntID);
         }
 
-        [HttpPost]
-        public void UpdateSkillActivity(int active)
-        {
-
-        }
     }
 }
