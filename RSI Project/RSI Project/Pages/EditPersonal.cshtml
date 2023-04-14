@@ -4,6 +4,9 @@
     ViewData["Title"] = "Personal Information";
 }
 
+<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+</asp:ScriptManager>
+
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
     <p></p>
@@ -29,7 +32,12 @@
                 {
                     <tr>
                         <td>@skill.skillName</td>
-                        <td><input type="submit" value="Remove" /></td>
+                        <!--this should NOT delete the record, rather set the skill as inactive-->
+                        <td>
+                            <form asp-action="UpdateSkillActivity" asp-controller="EditPersonal" method="post">
+                                <button type="button" name="active" value="@skill.empSkillId" class="btn btn-primary">Remove</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             </table>
@@ -42,6 +50,14 @@
             </select>
                 <input type="submit" value="Add" />
             </form>
+            <script>
+                function DisableSkill(ID)
+                {
+                    alert("test");
+                    
+                    
+                }
+            </script>
         </div>
     </div>
 </div>

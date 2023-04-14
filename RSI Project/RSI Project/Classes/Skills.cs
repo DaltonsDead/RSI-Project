@@ -4,5 +4,6 @@
     {
         public int skillID;
         public string skillName;
+        public int empSkillId;
     }
 }

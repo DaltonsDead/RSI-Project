@@ -15,5 +15,11 @@ namespace RSI_Project.Pages
             DatabaseMethods.pullUnassignedSkills(unasSkills, employee.empIntID);
             DatabaseMethods.pullEmployeeSkills(skills, employee.empIntID);
         }
+
+        [HttpPost]
+        public void UpdateSkillActivity(int active)
+        {
+
+        }
     }
 }

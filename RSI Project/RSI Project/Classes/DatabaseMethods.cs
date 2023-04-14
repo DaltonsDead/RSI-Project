@@ -179,6 +179,7 @@ namespace RSI_Project.Classes
                                 Skills skills = new Skills();
                                 skills.skillID = reader.GetInt32(0);
                                 skills.skillName = reader.GetString(1);
+                                skills.empSkillId = reader.GetInt32(2);
 
                                 skillList.Add(skills);
                             }
@@ -218,6 +219,28 @@ namespace RSI_Project.Classes
                             }
                         }
                     }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        public static void setIfSkillActive(int active, int ID)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand setIfActive = new SqlCommand("setIfSkillActive", connection);
+                    setIfActive.CommandType = CommandType.StoredProcedure;
+                    setIfActive.Parameters.Add(new SqlParameter("@ID", ID));
+                    setIfActive.Parameters.Add(new SqlParameter("@active", active));
+                    setIfActive.ExecuteNonQuery();
                     connection.Close();
                 }
             }
