@@ -227,7 +227,7 @@ namespace RSI_Project.Classes
                 Console.WriteLine(ex.Message);
             }
         }
-        public static void setIfSkillActive(int active, int ID)
+        public static int setIfSkillActive(int active, int skillId, int empId, string updater)
         {
             try
             {
@@ -238,8 +238,10 @@ namespace RSI_Project.Classes
                     connection.Open();
                     SqlCommand setIfActive = new SqlCommand("setIfSkillActive", connection);
                     setIfActive.CommandType = CommandType.StoredProcedure;
-                    setIfActive.Parameters.Add(new SqlParameter("@ID", ID));
+                    setIfActive.Parameters.Add(new SqlParameter("@skillId", skillId));
+                    setIfActive.Parameters.Add(new SqlParameter("@empId", empId));
                     setIfActive.Parameters.Add(new SqlParameter("@active", active));
+                    setIfActive.Parameters.Add(new SqlParameter("@updater", updater));
                     setIfActive.ExecuteNonQuery();
                     connection.Close();
                 }
@@ -248,6 +250,7 @@ namespace RSI_Project.Classes
             {
                 Console.WriteLine(ex.Message);
             }
+            return 0;
         }
 
     }

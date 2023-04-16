@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RSI_Project.Classes;
+using System;
 
 namespace RSI_Project.Pages
 {
@@ -16,5 +17,20 @@ namespace RSI_Project.Pages
             DatabaseMethods.pullEmployeeSkills(skills, employee.empIntID);
         }
 
+
+        public async Task OnPostRemove(int skillId, int empId)
+        {
+
+            string updater = User.Identity.Name[..User.Identity.Name.IndexOf("@")];
+            DatabaseMethods.setIfSkillActive(0, skillId, empId, updater);
+            OnGet();
+        }
+
+        public async Task OnPostAdd(int skillId, int empId)
+        {
+            string updater = User.Identity.Name[..User.Identity.Name.IndexOf("@")];
+            DatabaseMethods.setIfSkillActive(1, skillId, empId, updater);
+            OnGet();
+        }
     }
 }
