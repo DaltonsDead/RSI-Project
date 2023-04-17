@@ -20,14 +20,10 @@
         </div>
         <div class="col-3">
             <p>@Model.employee.employeeID</p>
-            <input type="text" value="@Model.employee.fName" />
-            <input type="text" value="@Model.employee.lName" />
+            <p><input type="text" value="@Model.employee.fName" /></p>
+            <p><input type="text" value="@Model.employee.lName" /></p>
             <p>@Model.employee.email</p>
             <table class="table table-striped">
-                <tr>
-                    <th>Skill</th>
-                    <th>&nbsp;</th>
-                </tr>
                 @foreach (var skill in Model.skills)
                 {
                     <tr>
@@ -49,7 +45,7 @@
                     {
                         <option value="@unasSkill.skillID">@unasSkill.skillName</option>
                     }
-            </select>
+                </select>
                 <input type="hidden" name="empId" value="@Model.employee.empIntID" />
                 <button class="btn btn-default">Add</button>
             </form>
