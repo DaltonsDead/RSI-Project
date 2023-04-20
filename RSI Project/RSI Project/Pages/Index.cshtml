@@ -15,29 +15,29 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome @displayName!</h1>
+    <h1 id="fadeIn" class="display-4">
+        <span>Welcome</span>
+        <span>@displayName!</span>
+    </h1>
     <p></p>
     <div class="row">
-        <div class="col m-1" style="border: 1px solid black">
-            <h3 style="border-bottom: 1px solid black"><a class="link-dark nav-link" href="/Personal">Personal Information</a></h3>
-            <ul class="text-start">
-                <li>View personal information</li>
-                <li>Update skills</li>
-            </ul>
+        <div class="col m-1" >
+            <button id="navBtn" style="width:100%;">
+                <h3><a class="link-dark nav-link" href="/Personal">Personal Information</a></h3>
+            </button>
+            
         </div>
-        <div class="col m-1" style="border: 1px solid black">
-            <h3 style="border-bottom: 1px solid black"><a class="link-dark nav-link" href="/ViewActiveTraining">Active Training</a></h3>
-            <ul class="text-start">
-                <li>View active training</li>
-                <li>Update active training plan</li>
-                <li>Create training plan</li>
-            </ul>
+        <div class="col m-1">
+            <button id="navBtn" style="width:100%;">
+                <h3><a class="link-dark nav-link" href="/ViewActiveTraining">Active Training</a></h3>
+            </button>
+            
         </div>
-        <div class="col m-1" style="border: 1px solid black">
-            <h3 style="border-bottom: 1px solid black"><a class="link-dark nav-link" href="/TrainingHistory">Training History</a></h3>
-            <ul class="text-start">
-                <li>View training history</li>
-            </ul>
+        <div class="col m-1">
+            <button id="navBtn" style="width:100%;">
+                <h3><a class="link-dark nav-link" href="/TrainingHistory">Training History</a></h3>
+            </button>
+            
         </div>
     </div>
 </div>

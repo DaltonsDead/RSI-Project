@@ -15,5 +15,60 @@ html {
 
 body {
     margin-bottom: 60px;
-    background: linear-gradient(#ebf8e1, #abb8c3);
+    background: linear-gradient(#d3d9de, #718391);
 }
+
+#fadeIn {
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+@keyframes scale {
+    100% {
+        transform: scale(1);
+    }
+}
+
+#fadeIn > span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+#fadeIn > span:nth-child(1) {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+#fadeIn > span:nth-child(2) {
+    animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+#navBtn {
+    --c: #ffffff; /* the color*/
+
+    box-shadow: 0 0 0 .1em inset var(--c);
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: var(--_g) calc(var(--_p,0%) - 100%) 0%, var(--_g) calc(200% - var(--_p,0%)) 0%, var(--_g) calc(var(--_p,0%) - 100%) 100%, var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+}
+
+#navBtn:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+}
+
+#navBtn:active {
+    box-shadow: 0 0 9e9q inset #0009;
+    background-color: var(--c);
+    color: #fff;
+}
+
