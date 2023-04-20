@@ -53,8 +53,9 @@ namespace RSI_Project.Classes
             return employeeList;
         }
 
-        public static void pullSingleEmployeeInfo(EmployeeInfo employee, string email)
+        public static EmployeeInfo pullSingleEmployeeInfo(string email)
         {
+            EmployeeInfo employee = new EmployeeInfo();
             try
             {
                 String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
@@ -89,6 +90,7 @@ namespace RSI_Project.Classes
             {
                 Console.WriteLine(ex.Message);
             }
+            return employee;
         }
 
         public static List<PracticeArea> pullPracticeAreas()
@@ -286,9 +288,33 @@ namespace RSI_Project.Classes
                     connection.Open();
                     SqlCommand updateEmployeePracticeArea = new SqlCommand("updateEmployeePracticeArea", connection);
                     updateEmployeePracticeArea.CommandType = CommandType.StoredProcedure;
-                    updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@empID", empId));
+                    updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@empId", empId));
                     updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@practiceAreaId", practiceAreaId));
                     updateEmployeePracticeArea.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void updateEmployeeName(string fName, string lName, int empId)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand updateEmployeeName = new SqlCommand("UpdateEmployeeName", connection);
+                    updateEmployeeName.CommandType = CommandType.StoredProcedure;
+                    updateEmployeeName.Parameters.Add(new SqlParameter("@employeeID", empId));
+                    updateEmployeeName.Parameters.Add(new SqlParameter("@firstName", fName));
+                    updateEmployeeName.Parameters.Add(new SqlParameter("@lastName", lName));
+                    updateEmployeeName.ExecuteNonQuery();
                     connection.Close();
                 }
             }

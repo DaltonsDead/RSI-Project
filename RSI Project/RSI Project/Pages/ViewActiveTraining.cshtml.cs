@@ -10,7 +10,7 @@ namespace RSI_Project.Pages
         public TrainingPlan activeTraining  = new TrainingPlan();
         public void OnGet()
         {
-            DatabaseMethods.pullSingleEmployeeInfo(employee, email: User.Identity.Name);
+            employee = DatabaseMethods.pullSingleEmployeeInfo(email: User.Identity.Name);
             DatabaseMethods.getActiveTrainingPlan(activeTraining, employee.empIntID);
             DatabaseMethods.getMediumAndStatus(activeTraining);
 
