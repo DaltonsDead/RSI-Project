@@ -20,13 +20,16 @@
             <p>Practice Area</p>
             <p>Skills</p>
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <p>@Model.employee.employeeID</p>
-            <p><input type="text" value="@Model.employee.fName" /></p>
-            <p><input type="text" value="@Model.employee.lName" /></p>
+            <form asp-page-handler="name" method="post">
+                <p><input type="text" name="fName" value="@Model.employee.fName" /><button class="btn-light">Save</button></p>
+                <p><input type="text" name="lName" value="@Model.employee.lName" /><button class="btn-light">Save</button></p>
+                <input type="hidden" name="empId" value="@Model.employee.empIntID" />
+            </form>
             <p>@Model.employee.email</p>
             <form id="practiceArea" asp-page-handler="area" method=post>
-                <select name="practiceAreaId" onchange="this.form.submit()">
+                <select name="practiceAreaId" onchange="this.form.submit()" style="width:70%;">
                     @foreach (PracticeArea practiceArea in Model.practiceAreas)
                     {
                         @if (Model.employee.practiceArea == practiceArea.practiceAreaID)
@@ -48,7 +51,7 @@
                     <tr>
                         <td>@skill.skillName</td>
                         <!--this should NOT delete the record, rather set the skill as inactive-->
-                        <td>
+                        <td class="text-center">
                             <form asp-page-handler="remove" method="post">
                               <button class="btn btn-default" style="color:red;">Remove</button>
                                 <input type="hidden" name="skillId" value="@skill.skillID" />
@@ -59,15 +62,16 @@
                 }
             </table>
             <form id="personalSkills" asp-page-handler="add" method="post">
-                <select name="skillId">
-                    @foreach (var unasSkill in Model.unasSkills)
-                    {
-                        <option value="@unasSkill.skillID">@unasSkill.skillName</option>
-                    }
-                </select>
-                <input type="hidden" name="empId" value="@Model.employee.empIntID" />
-                <p></p>
-                <button class="btn btn-default btn-light">Add</button>
+                <p>
+                    <select name="skillId" style="width:70%;">
+                        @foreach (var unasSkill in Model.unasSkills)
+                        {
+                            <option value="@unasSkill.skillID">@unasSkill.skillName</option>
+                        }
+                    </select>
+                    <input type="hidden" name="empId" value="@Model.employee.empIntID" />
+                    <button class="btn-light">Add</button>
+                </p>
             </form>
         </div>
     </div>

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RSI_Project.Classes;
 
-namespace WebApplication2.Pages
+namespace RSI_Project.Pages
 {
     public class PersonalModel : PageModel
     {
@@ -11,7 +11,7 @@ namespace WebApplication2.Pages
         
         public void OnGet()
         {
-            DatabaseMethods.pullSingleEmployeeInfo(employee, email: User.Identity.Name);
+            employee = DatabaseMethods.pullSingleEmployeeInfo(email: User.Identity.Name);
             DatabaseMethods.pullEmployeeSkills(skills, employee.empIntID);
         }
 

@@ -1,5 +1,5 @@
 ﻿@page
-@model WebApplication2.Pages.PersonalModel
+@model RSI_Project.Pages.PersonalModel
 @{
     ViewData["Title"] = "Personal Information";
     string skillsString = "";
@@ -17,7 +17,7 @@
             <p>Practice Area</p>
             <p>Skills</p>
         </div>
-        <div class="col-3">
+        <div class="col-4">
             <p>@Model.employee.employeeID</p>
             <p>@Model.employee.fName</p>
             <p>@Model.employee.lName</p>
@@ -36,7 +36,7 @@
             }
             <p>@skillsString</p>
             <form action="EditPersonal">
-                <input type="submit" value="Edit"/>
+                <input class="btn-light" type="submit" value="Edit"/>
             </form>
         </div>
     </div>

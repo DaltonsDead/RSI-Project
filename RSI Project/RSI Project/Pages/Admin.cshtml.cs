@@ -11,7 +11,7 @@ namespace RSI_Project.Pages
         public EmployeeInfo employeeUser = new EmployeeInfo();
         public void OnGet()
         {
-            DatabaseMethods.pullSingleEmployeeInfo(employeeUser, email: User.Identity.Name);
+            employeeUser = DatabaseMethods.pullSingleEmployeeInfo(email: User.Identity.Name);
         }
 
         public string GetPracticeAreaName(int practiceAreaID)

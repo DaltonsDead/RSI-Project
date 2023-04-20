@@ -14,9 +14,15 @@ namespace RSI_Project.Pages
 
         public void OnGet()
         {
-            DatabaseMethods.pullSingleEmployeeInfo(employee, email: User.Identity.Name);
+            employee = DatabaseMethods.pullSingleEmployeeInfo(email: User.Identity.Name);
             DatabaseMethods.pullUnassignedSkills(unasSkills, employee.empIntID);
             DatabaseMethods.pullEmployeeSkills(skills, employee.empIntID);
+        }
+
+        public async Task OnPostName(string fName, string lName, int empId)
+        {
+            DatabaseMethods.updateEmployeeName(fName, lName, empId);
+            OnGet();
         }
 
         public async Task OnPostArea(int empId, int practiceAreaId)
