@@ -7,11 +7,10 @@ namespace RSI_Project.Pages
 {
     public class AdminModel : PageModel
     {
-        public List<EmployeeInfo> employeeList = new List<EmployeeInfo>();
+        public List<EmployeeInfo> employeeList = DatabaseMethods.pullAllEmployeeInfo();
         public EmployeeInfo employeeUser = new EmployeeInfo();
         public void OnGet()
         {
-            DatabaseMethods.pullAllEmployeeInfo(employeeList);
             DatabaseMethods.pullSingleEmployeeInfo(employeeUser, email: User.Identity.Name);
         }
 
@@ -26,6 +25,23 @@ namespace RSI_Project.Pages
                 Console.Write(ex.Message);
                 return "None";
             }
+        }
+
+        public async Task OnPostSearch(int searchID)
+        {
+            List<EmployeeInfo> tempList = new List<EmployeeInfo>();
+            foreach(EmployeeInfo employee in employeeList)
+            {
+                if (searchID == employee.employeeID)
+                {
+                    tempList.Add(employee);
+                }
+            }
+            if (tempList.Count > 0)
+            {
+                employeeList = tempList;
+            }
+            OnGet();
         }
     }
 }

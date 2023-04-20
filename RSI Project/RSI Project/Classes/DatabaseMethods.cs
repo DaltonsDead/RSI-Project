@@ -7,10 +7,10 @@ namespace RSI_Project.Classes
 {
     public class DatabaseMethods
     {
-        public List<EmployeeInfo> employeeList = new List<EmployeeInfo>();
 
-        public static void pullAllEmployeeInfo(List<EmployeeInfo> employeeList)
+        public static List<EmployeeInfo> pullAllEmployeeInfo()
         {
+            List<EmployeeInfo> employeeList = new List<EmployeeInfo>();
             try
             {
                 String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
@@ -50,7 +50,7 @@ namespace RSI_Project.Classes
             {
                 Console.WriteLine(ex.Message);
             }
-
+            return employeeList;
         }
 
         public static void pullSingleEmployeeInfo(EmployeeInfo employee, string email)

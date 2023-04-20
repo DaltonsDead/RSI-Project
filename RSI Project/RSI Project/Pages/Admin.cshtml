@@ -12,11 +12,9 @@
         <div class="row">
             <h2>Employees</h2>
             <p>&nbsp;</p>
-            <form>
-                <input type="search" placeholder="Employee ID ex: 000000" />
+            <form asp-page-handler="search" method="post">
+                <input type="search" name="searchID" placeholder="Employee ID ex: 000000" />
                 <input type="submit" value="Search" />
-                <input type="button" value="Add">
-                <input type="button" value="Remove">
             </form>
             
             <p>&nbsp;</p>
@@ -30,7 +28,8 @@
                         <th onclick="sortTable(4)">In Labs</th>
                         <th onclick="sortTable(5)">Practice Area</th>
                         <th onclick="sortTable(6)">User Type</th>
-                        <th class="text-start" onclick="sortTable(6)">Email</th>
+                        <th class="text-start" onclick="sortTable(7)">Email</th>
+                        <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,6 +69,14 @@
                             <td>@Model.GetPracticeAreaName(employee.practiceArea)</td>
                             <td>@employee.userType</td>
                             <td class="text-start">@employee.email</td>
+                            @if (employee.inLabs.Value[0] == 0)
+                            {
+                                <td><button class="btn" style="width:100%; background-color:lightgreen;">+</button></td>
+                            }
+                            else
+                            {
+                                <td><button class="btn" style="width:100%; background-color:lightcoral;">-</button></td>
+                            }
                         </tr>
                     }
                 </tbody>
