@@ -2,69 +2,78 @@
 @model RSI_Project.Pages.ViewUpdateCreateActiveTrainingModel
 @{
     ViewData["Title"] = "View Training Plan";
-    var num = new Random();
-    int choice = num.Next(3);
-    String[] arr = { "activePlan", "noActive", "notInLabs" };
-    String visible = arr[choice];
 }
+<style>
+    .flexbox-container {
+        display:flex;
+        background-color: rgba(50,50,50,.3);
+        border-radius: .4em;
+        overflow: hidden;
+        padding: .1em;
+        margin: .1em;
+    }
 
+    .break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .item {
+        flex-grow: 1;
+        background-color: rgba(250,250,250,.5);
+        border-radius: .4em;
+    }
+
+    .item-2 {
+        flex-grow: 2;
+        background-color: rgba(250,250,250,.5);
+        border-radius: .4em;
+    }
+
+    .item-3 {
+        flex-grow: 3;
+        background-color: rgba(250,250,250,.5);
+        border-radius: .4em;
+    }
+
+    .margins {
+        margin: .1em;
+    }
+
+    textarea {
+        width: 90%;
+        resize:none;
+    }
+</style>
 
 <div class="text-center">
-    <h1>@ViewData["Title"]</h1>
+    <h1>Active training for @Model.employee.fName @Model.employee.lName</h1>
     <br />
+    <div class="flexbox-container">
+        <div class="item margins">
+            <p>Status: @Model.activeTraining.status</p>
+        </div>
+        <div class="item margins">
+            <p>Medium: @Model.activeTraining.medium</p>
+        </div>
+        <div class="item margins">
+            <p>Start Date: @Model.activeTraining.startDate.ToShortDateString()</p>
+        </div>
+        <div class="item margins">
+            <p>EndDate: @Model.activeTraining.endDate.ToShortDateString()</p>
+        </div>
+
+    </div>
+    <div class="flexbox-container">
+        <div class="item margins">
+            <p>Description</p>
+            <textarea disabled>@Model.activeTraining.description</textarea>
+        </div>
+
+    </div>
+
 </div>
 
-
-
-
-@{
-    if (visible == "activePlan")
-    {
-        <!--If the employee has an active training plan-->
-        <div class="row text-start justify-content-center" >
-            <div class="col-2">
-                <p>Training Plan ID</p>
-                <p>Medium</p>
-                <p>Description</p>
-                <p>Start Date</p>
-                <p>Status</p>
-            </div>
-            <div class="col-3">
-                <form id="trainingPlan">
-                    <p>trainingPlanID</p>
-                    <p>media</p>
-                    <p>description</p>
-                    <p>startDate</p>
-                    <p>status</p>
-                    <br />
-                    <input type="submit" value="Edit" />
-                    <input type="button" value="Mark Complete" />
-                    <br />
-                    <br />
-                    <a href="/TrainingHistory">View Training Plan History</a>
-                </form>
-            </div>
-        </div>
-    }
-    else if (visible == "noActive")
-    {
-        <!--If the employee does not have a plan active-->
-        <div class="text-center">
-            <p>No training plan active.</p>
-            <a href="/AddUpdateTrainingPlan">Create Plan</a>
-            <br />
-            <a href="/TrainingHistory">View Training Plan History</a>
-        </div>
-    }
-    else if (visible == "notInLabs")
-    {
-        <!--If the employee is not in labs (& doesn't have an active plan)-->
-        <div class="text-center">
-            <p>No training plan active. Unable to create a plan at this time.</p>
-            <a href="/TrainingHistory">View Training Plan History</a>
-        </div>
-    }
-}
 
 
 

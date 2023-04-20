@@ -53,9 +53,8 @@ namespace RSI_Project.Classes
             return employeeList;
         }
 
-        public static EmployeeInfo pullSingleEmployeeInfo(string email)
+        public static void pullSingleEmployeeInfo(EmployeeInfo employee, string email)
         {
-            EmployeeInfo employee = new EmployeeInfo();
             try
             {
                 String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
@@ -90,7 +89,6 @@ namespace RSI_Project.Classes
             {
                 Console.WriteLine(ex.Message);
             }
-            return employee;
         }
 
         public static List<PracticeArea> pullPracticeAreas()
@@ -288,7 +286,7 @@ namespace RSI_Project.Classes
                     connection.Open();
                     SqlCommand updateEmployeePracticeArea = new SqlCommand("updateEmployeePracticeArea", connection);
                     updateEmployeePracticeArea.CommandType = CommandType.StoredProcedure;
-                    updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@empId", empId));
+                    updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@empID", empId));
                     updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@practiceAreaId", practiceAreaId));
                     updateEmployeePracticeArea.ExecuteNonQuery();
                     connection.Close();
@@ -300,7 +298,7 @@ namespace RSI_Project.Classes
             }
         }
 
-        public static void updateEmployeeName(string fName, string lName, int empId)
+        public static void getActiveTrainingPlan(TrainingPlan activePlan, int id)
         {
             try
             {
@@ -309,12 +307,28 @@ namespace RSI_Project.Classes
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlCommand updateEmployeeName = new SqlCommand("UpdateEmployeeName", connection);
-                    updateEmployeeName.CommandType = CommandType.StoredProcedure;
-                    updateEmployeeName.Parameters.Add(new SqlParameter("@employeeID", empId));
-                    updateEmployeeName.Parameters.Add(new SqlParameter("@firstName", fName));
-                    updateEmployeeName.Parameters.Add(new SqlParameter("@lastName", lName));
-                    updateEmployeeName.ExecuteNonQuery();
+                    using (SqlCommand getActiveTraining = new SqlCommand("getActiveTraining", connection))
+                    {
+                        getActiveTraining.CommandType = CommandType.StoredProcedure;
+                        getActiveTraining.Parameters.Add(new SqlParameter("@ID", id));
+                        using (SqlDataReader reader = getActiveTraining.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                activePlan.trainingPlanID = reader.GetInt32(0);
+                                activePlan.empID = reader.GetInt32(1);
+                                activePlan.statusID= reader.GetInt32(2);
+                                activePlan.mediumID= reader.GetInt32(3);
+                                activePlan.description= reader.GetString(4);
+                                activePlan.startDate= reader.GetDateTime(5);
+                                activePlan.endDate= reader.GetDateTime(6);
+                                activePlan.createdBy = reader.GetString(7);
+                                activePlan.createdDate= reader.GetDateTime(8);
+                                activePlan.updatedBy = reader.GetString(9);
+                                activePlan.updatedDate= reader.GetDateTime(10);
+                            }
+                        }
+                    }
                     connection.Close();
                 }
             }
@@ -323,5 +337,37 @@ namespace RSI_Project.Classes
                 Console.WriteLine(ex.Message);
             }
         }
+        public static void getMediumAndStatus(TrainingPlan activePlan)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand getMediumAndStatus = new SqlCommand("getMediumAndStatus", connection))
+                    {
+                        getMediumAndStatus.CommandType = CommandType.StoredProcedure;
+                        getMediumAndStatus.Parameters.Add(new SqlParameter("@MED", activePlan.mediumID));
+                        getMediumAndStatus.Parameters.Add(new SqlParameter("@STAT", activePlan.statusID));
+                        using (SqlDataReader reader = getMediumAndStatus.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                activePlan.medium = reader.GetString(0);
+                                activePlan.status = reader.GetString(1);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }
