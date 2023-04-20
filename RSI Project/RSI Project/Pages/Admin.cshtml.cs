@@ -43,5 +43,12 @@ namespace RSI_Project.Pages
             }
             OnGet();
         }
+
+        public async Task OnPostAdd(int empID)
+        {
+            DatabaseMethods.addEmployeeToLabs(empID);
+            employeeList = DatabaseMethods.pullAllEmployeeInfo();
+            OnGet();
+        }
     }
 }

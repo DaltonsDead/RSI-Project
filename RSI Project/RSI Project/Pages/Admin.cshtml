@@ -71,7 +71,12 @@
                             <td class="text-start">@employee.email</td>
                             @if (employee.inLabs.Value[0] == 0)
                             {
-                                <td><button class="btn" style="width:100%; background-color:lightgreen;">+</button></td>
+                                <td>
+                                    <form asp-page-handler="add" method="post">
+                                        <button class="btn" style="width:100%; background-color:lightgreen;">+</button>
+                                        <input type="hidden" name="empID" value="@employee.empIntID" />
+                                    </form>
+                                </td>
                             }
                             else
                             {

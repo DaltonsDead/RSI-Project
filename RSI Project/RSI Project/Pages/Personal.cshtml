@@ -14,6 +14,7 @@
             <p>First Name</p>
             <p>Last Name</p>
             <p>Email</p>
+            <p>Practice Area</p>
             <p>Skills</p>
         </div>
         <div class="col-3">
@@ -21,6 +22,7 @@
             <p>@Model.employee.fName</p>
             <p>@Model.employee.lName</p>
             <p>@Model.employee.email</p>
+            <p>@Model.GetPracticeAreaName(Model.employee.practiceArea)</p>
             @foreach (var skill in Model.skills)
             {
                 if (skill.Equals(Model.skills.Last()))

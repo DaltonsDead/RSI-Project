@@ -94,7 +94,6 @@ namespace RSI_Project.Classes
         public static List<PracticeArea> pullPracticeAreas()
         {
             List<PracticeArea> practiceAreas = new List<PracticeArea>();
-            PracticeArea practiceArea = new PracticeArea();
             try
             {
                 String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
@@ -108,6 +107,7 @@ namespace RSI_Project.Classes
                         {
                             while (reader.Read())
                             {
+                                PracticeArea practiceArea = new PracticeArea();
                                 practiceArea.practiceAreaID = reader.GetInt32(0);
                                 practiceArea.practiceAreaName = reader.GetString(1);
 
@@ -251,6 +251,51 @@ namespace RSI_Project.Classes
                 Console.WriteLine(ex.Message);
             }
             return 0;
+        }
+
+        public static void addEmployeeToLabs(int empID)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand addEmployeeToLabs = new SqlCommand("addEmployeeToLabs", connection);
+                    addEmployeeToLabs.CommandType = CommandType.StoredProcedure;
+                    addEmployeeToLabs.Parameters.Add(new SqlParameter("@empID", empID));
+                    addEmployeeToLabs.ExecuteNonQuery();
+                    connection.Close(); 
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void updatePracticeArea(int empId, int practiceAreaId)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand updateEmployeePracticeArea = new SqlCommand("updateEmployeePracticeArea", connection);
+                    updateEmployeePracticeArea.CommandType = CommandType.StoredProcedure;
+                    updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@empID", empId));
+                    updateEmployeePracticeArea.Parameters.Add(new SqlParameter("@practiceAreaId", practiceAreaId));
+                    updateEmployeePracticeArea.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }
