@@ -1,12 +1,12 @@
 ﻿@page
-@model RSI_Project.Pages.ViewUpdateCreateActiveTrainingModel
+@model RSI_Project.Pages.ViewActiveTrainingModel
 @{
     ViewData["Title"] = "View Training Plan";
 }
 <style>
     .flexbox-container {
         display:flex;
-        background-color: rgba(50,50,50,.3);
+        background-color: black;
         border-radius: .4em;
         overflow: hidden;
         padding: .1em;
@@ -20,20 +20,27 @@
 
     .item {
         flex-grow: 1;
-        background-color: rgba(250,250,250,.5);
-        border-radius: .4em;
+        background-color: white;
+        border-radius: 0.4em;
     }
 
-    .item-2 {
-        flex-grow: 2;
-        background-color: rgba(250,250,250,.5);
-        border-radius: .4em;
+    .item-none {
+        flex-grow: 1;
+        background-color: white;
     }
 
-    .item-3 {
-        flex-grow: 3;
-        background-color: rgba(250,250,250,.5);
-        border-radius: .4em;
+    .item-left {
+        flex-grow: 1;
+        background-color: white;
+        border-top-left-radius: 0.4em;
+        border-bottom-left-radius: 0.4em;
+    }
+
+    .item-right {
+        flex-grow: 1;
+        background-color: white;
+        border-top-right-radius: 0.4em;
+        border-bottom-right-radius: 0.4em;
     }
 
     .margins {
@@ -42,31 +49,35 @@
 
     textarea {
         width: 90%;
+        background-color: #f0f0f0;
+        color: black;
+        border: 2px solid #718391;
+        margin: 0.5em auto 1em auto;
         resize:none;
     }
 </style>
 
-<div class="text-center">
+<div class="text-center" style="font-size: 1.2em;">
     <h1>Active training for @Model.employee.fName @Model.employee.lName</h1>
     <br />
     <div class="flexbox-container">
-        <div class="item margins">
-            <p>Status: @Model.activeTraining.status</p>
+        <div class="item-left margins">
+            <p style="margin: 0.5em 0;">Status: @Model.activeTraining.status</p>
         </div>
-        <div class="item margins">
-            <p>Medium: @Model.activeTraining.medium</p>
+        <div class="item-none margins">
+            <p style="margin: 0.5em 0;">Medium: @Model.activeTraining.medium</p>
         </div>
-        <div class="item margins">
-            <p>Start Date: @Model.activeTraining.startDate.ToShortDateString()</p>
+        <div class="item-none margins">
+            <p style="margin: 0.5em 0;">Start Date: @Model.activeTraining.startDate.ToShortDateString()</p>
         </div>
-        <div class="item margins">
-            <p>EndDate: @Model.activeTraining.endDate.ToShortDateString()</p>
+        <div class="item-right margins">
+            <p style="margin: 0.5em 0;">EndDate: @Model.activeTraining.endDate.ToShortDateString()</p>
         </div>
 
     </div>
     <div class="flexbox-container">
         <div class="item margins">
-            <p>Description</p>
+            <p style="margin: 0.5em 0;">Description</p>
             <textarea disabled>@Model.activeTraining.description</textarea>
         </div>
 

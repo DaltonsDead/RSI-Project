@@ -4,7 +4,7 @@ using RSI_Project.Classes;
 
 namespace RSI_Project.Pages
 {
-    public class ViewUpdateCreateActiveTrainingModel : PageModel
+    public class ViewActiveTrainingModel : PageModel
     {
         public EmployeeInfo employee = new EmployeeInfo();
         public TrainingPlan activeTraining  = new TrainingPlan();

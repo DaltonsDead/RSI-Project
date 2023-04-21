@@ -8,8 +8,10 @@
 <div class="text-center">
     <h1>@ViewData["Title"]</h1>
     <p></p>
-    <div class="row text-start justify-content-center" style="font-size: 1.2em;">
-        <div class="col-2">
+    <div class="row justify-content-center" style="font-size: 1.2em;">
+        <div class="text-end" style="float: left; width: 20%; margin-right: 0.3em;
+            background-color: white; border-top-left-radius: .4em; border-bottom-left-radius: .4em; border: 2px solid black;">
+            <p></p>
             <p>Employee ID</p>
             <p>First Name</p>
             <p>Last Name</p>
@@ -17,7 +19,9 @@
             <p>Practice Area</p>
             <p>Skills</p>
         </div>
-        <div class="col-4">
+        <div class="text-start" style="float: left; width: 60%; margin-left: 0.3em;
+            background-color: white; border-top-right-radius: .4em; border-bottom-right-radius: .4em; border: 2px solid black;">
+            <p></p>
             <p>@Model.employee.employeeID</p>
             <p>@Model.employee.fName</p>
             <p>@Model.employee.lName</p>
@@ -36,10 +40,16 @@
             }
             <p>@skillsString</p>
             <form action="EditPersonal">
-                <input class="btn-light" type="submit" value="Edit"/>
+                <input class="btn-light" style="border: 1px solid #718391;" type="submit" value="Edit"/>
             </form>
+            <p></p>
         </div>
     </div>
 </div>
 
-
+<div class="animation-wrapper">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+</div>
