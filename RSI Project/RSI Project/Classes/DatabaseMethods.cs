@@ -1,4 +1,5 @@
-﻿using RSI_Project.Classes;
+﻿using Microsoft.Identity.Client;
+using RSI_Project.Classes;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -395,5 +396,85 @@ namespace RSI_Project.Classes
             }
         }
 
+        public static void getPlanSkills(TrainingPlan plan)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand getMediumAndStatus = new SqlCommand("getTrainingPlanSkills", connection))
+                    {
+                        getMediumAndStatus.CommandType = CommandType.StoredProcedure;
+                        getMediumAndStatus.Parameters.Add(new SqlParameter("@planid", plan.trainingPlanID));
+                        using (SqlDataReader reader = getMediumAndStatus.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Skills skill= new Skills();
+                                skill.skillName = reader.GetString(0);
+                                plan.skills.Add(skill);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
+        public static List<TrainingPlan> getTrainingHistory(int id)
+        {
+            List<TrainingPlan> plans= new List<TrainingPlan>();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand getActiveTraining = new SqlCommand("getTrainingHistory", connection))
+                    {
+                        getActiveTraining.CommandType = CommandType.StoredProcedure;
+                        getActiveTraining.Parameters.Add(new SqlParameter("@ID", id));
+                        using (SqlDataReader reader = getActiveTraining.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                TrainingPlan plan = new TrainingPlan();
+                                plan.trainingPlanID = reader.GetInt32(0);
+                                plan.empID = reader.GetInt32(1);
+                                plan.statusID = reader.GetInt32(2);
+                                plan.mediumID = reader.GetInt32(3);
+                                plan.description = reader.GetString(4);
+                                plan.startDate = reader.GetDateTime(5);
+                                plan.endDate = reader.GetDateTime(6);
+                                plan.createdBy = reader.GetString(7);
+                                plan.createdDate = reader.GetDateTime(8);
+                                plan.updatedBy = reader.GetString(9);
+                                plan.updatedDate = reader.GetDateTime(10);
+
+                                plans.Add(plan);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return plans;
+        }
+
     }
+
+
 }

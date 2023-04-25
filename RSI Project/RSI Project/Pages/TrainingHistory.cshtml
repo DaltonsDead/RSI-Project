@@ -9,12 +9,101 @@
     <h1>@ViewData["Title"]</h1>
     <p></p>
 </div>
+<style>
+    .flexbox-container {
+        display: flex;
+        background-color: black;
+        border-radius: .4em;
+        overflow: hidden;
+        padding: .1em;
+        margin: .1em;
+    }
 
+    .break {
+        flex-basis: 100%;
+        height: 0;
+    }
 
-<div class="justify-content-center">
-    <table class="table table-striped table-light">
-        
-    </table>
+    .item {
+        flex-grow: 1;
+        background-color: white;
+        border-radius: 0.4em;
+    }
+
+    .item-none {
+        flex-grow: 1;
+        background-color: white;
+    }
+
+    .item-left {
+        flex-grow: 1;
+        background-color: white;
+        border-top-left-radius: 0.4em;
+        border-bottom-left-radius: 0.4em;
+    }
+
+    .item-left-large {
+        flex-grow: 3;
+        background-color: white;
+        border-top-left-radius: 0.4em;
+        border-bottom-left-radius: 0.4em;
+    }
+
+    .item-right {
+        flex-grow: 1;
+        background-color: white;
+        border-top-right-radius: 0.4em;
+        border-bottom-right-radius: 0.4em;
+    }
+
+    .margins {
+        margin: .1em;
+    }
+
+    textarea {
+        width: 90%;
+        background-color: #f0f0f0;
+        color: black;
+        border: 2px solid #718391;
+        margin: 0.5em auto 1em auto;
+        resize: none;
+    }
+</style>
+<div class="text-center" style="font-size: 1.2em;">
+<h1>History for @Model.employee.fName @Model.employee.lName</h1>
+
+@foreach(var plan in @Model.plans)
+{
+    <br />
+    <div class="flexbox-container">
+        <div class="item-left margins">
+            <p style="margin: 0.5em 0;">Status: @plan.status</p>
+        </div>
+        <div class="item-none margins">
+            <p style="margin: 0.5em 0;">Medium: @plan.medium</p>
+        </div>
+        <div class="item-none margins">
+            <p style="margin: 0.5em 0;">Start Date: @plan.startDate.ToShortDateString()</p>
+        </div>
+        <div class="item-right margins">
+            <p style="margin: 0.5em 0;">EndDate: @plan.endDate.ToShortDateString()</p>
+        </div>
+
+    </div>
+        <div class="flexbox-container">
+            <div class="item-left-large margins">
+                <p style="margin: 0.5em 0;">Description</p>
+                <textarea disabled>@plan.description</textarea>
+            </div>
+            <div class="item-right margins">
+                <p style="margin: 0.5em 0;">SKills</p>
+                @foreach (var skill in plan.skills)
+                {
+                    <p>@skill.skillName</p>
+                }
+            </div>
+
+        </div>
+
+}
 </div>
-
-<p>No history to display</p>

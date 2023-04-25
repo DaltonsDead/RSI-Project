@@ -15,5 +15,6 @@
         public string updatedBy;
         public string status;
         public string medium;
+        public List<Skills> skills = new List<Skills>();
     }
 }
