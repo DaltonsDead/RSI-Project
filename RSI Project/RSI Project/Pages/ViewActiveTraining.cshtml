@@ -2,6 +2,7 @@
 @model RSI_Project.Pages.ViewActiveTrainingModel
 @{
     ViewData["Title"] = "View Training Plan";
+    Model.activeTraining = null;
 }
 <style>
     .flexbox-container {
@@ -55,36 +56,66 @@
         margin: 0.5em auto 1em auto;
         resize:none;
     }
+
+    .noPlan {
+        width: 25%;
+        margin: 0 auto;
+        background-color: white;
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        border: 2px solid black;
+        border-radius: 0.4em;
+    }
 </style>
 
 <div class="text-center" style="font-size: 1.2em;">
-    <h1>Active training for @Model.employee.fName @Model.employee.lName</h1>
+    <h1>Active Training for @Model.employee.fName @Model.employee.lName</h1>
     <br />
-    <div class="flexbox-container">
-        <div class="item-left margins">
-            <p style="margin: 0.5em 0;">Status: @Model.activeTraining.status</p>
+    @if (Model.employee.inLabs.Value[0] == 1 && Model.activeTraining != null)
+    {
+        <div class="flexbox-container">
+            <div class="item-left margins">
+                <p style="margin: 0.5em 0;">Status: @Model.activeTraining.status</p>
+            </div>
+            <div class="item-none margins">
+                <p style="margin: 0.5em 0;">Medium: @Model.activeTraining.medium</p>
+            </div>
+            <div class="item-none margins">
+                <p style="margin: 0.5em 0;">Start Date: @Model.activeTraining.startDate.ToShortDateString()</p>
+            </div>
+            <div class="item-right margins">
+                <p style="margin: 0.5em 0;">EndDate: @Model.activeTraining.endDate.ToShortDateString()</p>
+            </div>
         </div>
-        <div class="item-none margins">
-            <p style="margin: 0.5em 0;">Medium: @Model.activeTraining.medium</p>
+        <div class="flexbox-container">
+            <div class="item margins">
+                <p style="margin: 0.5em 0;">Description</p>
+                <textarea disabled>@Model.activeTraining.description</textarea>
+            </div>
         </div>
-        <div class="item-none margins">
-            <p style="margin: 0.5em 0;">Start Date: @Model.activeTraining.startDate.ToShortDateString()</p>
+    }
+    else if (Model.employee.inLabs.Value[0] == 1)
+    {
+        <div class="noPlan">
+            <p>No active training plan.</p>
+            <button id="createPlan" class="btn-light" style="border: 1px solid #718391;">Create Plan</button>
         </div>
-        <div class="item-right margins">
-            <p style="margin: 0.5em 0;">EndDate: @Model.activeTraining.endDate.ToShortDateString()</p>
+        
+    }
+    else
+    {
+        <div class="noPlan">
+            <p>No active training plan.</p>
         </div>
-
-    </div>
-    <div class="flexbox-container">
-        <div class="item margins">
-            <p style="margin: 0.5em 0;">Description</p>
-            <textarea disabled>@Model.activeTraining.description</textarea>
-        </div>
-
-    </div>
+    }
 
 </div>
 
+<script type="text/javascript">
+    document.getElementById("createPlan").onclick = function () {
+        location.href = "/AddUpdateTrainingPlan";
+    };
+</script>
 
 
 
