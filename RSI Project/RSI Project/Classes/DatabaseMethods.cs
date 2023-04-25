@@ -474,6 +474,75 @@ namespace RSI_Project.Classes
             return plans;
         }
 
+        public static List<Medium> getMedia()
+        {
+            List<Medium> media = new List<Medium>();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand allMedia = new SqlCommand("allMedia", connection))
+                    {
+                        allMedia.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = allMedia.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Medium medium = new Medium();
+                                medium.mediumID = reader.GetInt32(0);
+                                medium.mediumName = reader.GetString(1);
+
+                                media.Add(medium);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return media;
+        }
+
+        public static List<Status> getStatuses()
+        {
+            List<Status> statuses = new List<Status>();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand allStatuses = new SqlCommand("allStatuses", connection))
+                    {
+                        allStatuses.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = allStatuses.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Status status = new Status();
+                                status.statusID = reader.GetInt32(0);
+                                status.statusName = reader.GetString(1);
+
+                                statuses.Add(status);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return statuses;
+        }
     }
 
 

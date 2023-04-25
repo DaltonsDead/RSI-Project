@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RSI_Project.Classes;
 
-namespace WebApplication2.Pages
+namespace RSI_Project.Pages
 {
     public class TrainingModel : PageModel
     {

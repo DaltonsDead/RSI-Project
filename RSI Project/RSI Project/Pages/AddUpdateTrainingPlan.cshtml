@@ -3,59 +3,158 @@
 @{
     ViewData["Title"] = "Add/Update Training Plan";
 }
+
+<style>
+    .flexbox-container {
+        display: flex;
+        background-color: black;
+        border-radius: .4em;
+        overflow: hidden;
+        padding: .1em;
+        margin: .1em;
+    }
+
+    .break {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .item {
+        flex-grow: 1;
+        background-color: white;
+        border-radius: 0.4em;
+    }
+
+    .item-none {
+        flex-grow: 1;
+        background-color: white;
+    }
+
+    .item-left {
+        flex-grow: 1;
+        background-color: white;
+        border-top-left-radius: 0.4em;
+        border-bottom-left-radius: 0.4em;
+    }
+
+    .item-right {
+        flex-grow: 1;
+        background-color: white;
+        border-top-right-radius: 0.4em;
+        border-bottom-right-radius: 0.4em;
+    }
+
+    .margins {
+        margin: .1em;
+    }
+
+    textarea {
+        width: 90%;
+        background-color: #f0f0f0;
+        color: black;
+        border: 2px solid #718391;
+        margin: 0.5em auto 1em auto;
+        resize: none;
+    }
+
+    .noPlan {
+        width: 25%;
+        margin: 0 auto;
+        background-color: white;
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        border: 2px solid black;
+        border-radius: 0.4em;
+    }
+</style>
+
 <div class="text-center">
-    <h1>@ViewData["Title"]</h1>
-    <p>&nbsp;</p>
+    @if (Model.activeTraining != null)
+    {
+        <h1>Edit Training Plan</h1>
+    }
+    else
+    {
+        <h1>Add Training Plan</h1>
+    }
+    <br />
 </div>
 
-<!--Training Plan Create/Edit-->
-<div class="row text-start justify-content-center">
-    
-    <div class="col-2">
-        <p>Medium</p>
-        <p>Description</p>
-        <p>Start Date</p>
-        <p>Status</p>
-    </div>
-    <div class="col-3">
-        <form id="trainingPlan">
-            <p>
-                <select id="media">
-                    <option value="test1">test1</option>
-                    <option value="test2">test2</option>
-                    <option value="test3">test3</option>
-                    <!--
-                        for (int i = 0; i < mediumTableArray.GetLength(0); i++) {
-                            <option value=mediumTableArray[0][i]>mediumTableArray[1][i]</option>
+
+<div class="text-center" style="font-size: 1.2em;">
+    <form id="savePlan" asp-page-handler="save" method="post">
+        <input type="hidden" name="trainingID" value="@Model.activeTraining.trainingPlanID" />
+        <div class="flexbox-container">
+            <div class="item-left margins">
+                <p style="margin: 0.5em 0;">
+                    Status:
+                    <select name="status">
+                        @foreach (var status in Model.statuses)
+                        {
+                            if (Model.activeTraining.statusID == status.statusID)
+                            {
+                                <option value="@status.statusID" selected>@status.statusName</option>
+                            }
+                            else
+                            {
+                                <option value="@status.statusID">@status.statusName</option>
+                            }
                         }
-                        2 rows with many columns
-                        For each medium in the media table,
-                        create an option in a dropdown list.
-                    -->
-                </select>
-            </p>
-            <p>description</p>
-            <p><input type="date" /></p>
-            <p>
-                <select id="status">
-                    <option value="test1">test1</option>
-                    <option value="test2">test2</option>
-                    <option value="test3">test3</option>
-                    <!--
-                        for (int i = 0; i < statusTableArray.GetLength(0); i++) {
-                            <option value=statusTableArray[0][i]>statusTableArray[1][i]</option>
+                    </select>
+                </p>
+            </div>
+            <div class="item-none margins">
+                <p style="margin: 0.5em 0;">
+                    Medium:
+                    <select name="medium">
+                        @foreach (var medium in Model.media)
+                        {
+                            if (Model.activeTraining.mediumID == medium.mediumID)
+                            {
+                                <option value=@medium.mediumID selected>@medium.mediumName</option>
+                            }
+                            else
+                            {
+                                <option value=@medium.mediumID>@medium.mediumName</option>
+                            }          
                         }
-                        2 rows with many columns
-                        For each status in the status table,
-                        create an option in a dropdown list.
-                    -->
-                </select>
-            </p>
-            <br />
-            <input type="submit" value="Save" />
-            <input type="button" value="Cancel" />
-        </form>
-        <br />
-        <a href="/TrainingHistory">View Training Plan History</a>
-    </div>
+                    </select>
+                </p>
+            </div>
+            <div class="item-none margins">
+                <p style="margin: 0.5em 0;">Start Date: <input id="startDate" name="startDate" type="date" required /></p>
+                <script>
+                    if (@Model.activeTraining.trainingPlanID != 0)
+                    {
+                        document.getElementById("startDate").value = @Model.activeTraining.startDate.ToString("yyyy-MM-dd");
+                    }
+                </script>
+            </div>
+            <div class="item-right margins">
+                <p style="margin: 0.5em 0;">End Date: <input id="endDate" name="endDate" type="date" required /></p>
+                <script>
+                    if (@Model.activeTraining.trainingPlanID != 0) 
+                    {
+                        document.getElementById("endDate").value = @Model.activeTraining.endDate.ToString("yyyy-MM-dd");
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="flexbox-container">
+            <div class="item margins" style="padding-bottom: 0.75em;">
+                <p style="margin: 0.5em 0;">Description</p>
+                <textarea name="description" required>@Model.activeTraining.description</textarea>
+                <br />
+                <button class="btn-light" style="border: 1px solid #718391;">Save Plan</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="animation-wrapper">
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
 </div>

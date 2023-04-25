@@ -25,8 +25,8 @@
             background-color: white; border-top-right-radius: .4em; border-bottom-right-radius: .4em; border: 2px solid black;">
             <p>@Model.employee.employeeID</p>
             <form asp-page-handler="name" method="post">
-                <p><input type="text" name="fName" value="@Model.employee.fName" /><button class="btn-light" style="margin-left: 0.25em; border: 1px solid #718391;">Save</button></p>
-                <p><input type="text" name="lName" value="@Model.employee.lName" /><button class="btn-light" style="margin-left: 0.25em; border: 1px solid #718391;">Save</button></p>
+                <p><input type="text" name="fName" value="@Model.employee.fName" required/><button class="btn-light" style="margin-left: 0.25em; border: 1px solid #718391;">Save</button></p>
+                <p><input type="text" name="lName" value="@Model.employee.lName" required/><button class="btn-light" style="margin-left: 0.25em; border: 1px solid #718391;">Save</button></p>
                 <input type="hidden" name="empId" value="@Model.employee.empIntID" />
             </form>
             <p>@Model.employee.email</p>
@@ -75,6 +75,7 @@
                     <button class="btn-light" style="border: 1px solid #718391;">Add</button>
                 </p>
             </form>
+            <button id="save" class="btn-light" style="border: 1px solid #718391;">Save</button>
         </div>
     </div>
 </div>
@@ -86,4 +87,8 @@
     <div class="particle particle-4"></div>
 </div>
 
-
+<script type="text/javascript">
+    document.getElementById("save").onclick = function () {
+        location.href = "/Personal";
+    };
+</script>

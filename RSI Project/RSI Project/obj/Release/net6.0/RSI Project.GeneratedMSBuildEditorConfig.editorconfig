@@ -9,11 +9,11 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RSI_Project
 build_property.RootNamespace = RSI_Project
-build_property.ProjectDir = C:\Users\aster\source\repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\
+build_property.ProjectDir = C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aster\source\repos\DaltonsDead\RSI-Project\RSI Project\RSI Project
+build_property.MSBuildProjectDirectory = C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/aster/source/repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/AddUpdateTrainingPlan.cshtml]
