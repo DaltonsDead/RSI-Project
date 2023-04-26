@@ -87,11 +87,18 @@
             </div>
         </div>
         <div class="flexbox-container">
-            <div class="item margins" style="padding-bottom: 0.75em;">
+            <div class="item-left margins" style="padding-bottom: 0.75em;">
                 <p style="margin: 0.5em 0;">Description</p>
                 <textarea disabled>@Model.activeTraining.description</textarea>
                 <br />
                 <button id="createPlan" class="btn-light" style="border: 1px solid #718391;">Edit Plan</button>
+            </div>
+            <div class="item-right margins">
+                <p style="margin: 0.5em 0;">Skills</p>
+                @foreach (var skill in Model.activeTraining.skills)
+                {
+                    <p>@skill.skillName</p>
+                }
             </div>
         </div>
     }

@@ -8,12 +8,13 @@ namespace RSI_Project.Pages
     {
         public EmployeeInfo employee = new EmployeeInfo();
         public TrainingPlan activeTraining  = new TrainingPlan();
+        public List<Skills> skills = new List<Skills>();
         public void OnGet()
         {
             employee = DatabaseMethods.pullSingleEmployeeInfo(email: User.Identity.Name);
             DatabaseMethods.getActiveTrainingPlan(activeTraining, employee.empIntID);
             DatabaseMethods.getMediumAndStatus(activeTraining);
-
+            DatabaseMethods.getPlanSkills(plan: activeTraining);
         }
     }
 }

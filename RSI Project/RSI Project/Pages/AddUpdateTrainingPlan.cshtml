@@ -142,14 +142,44 @@
             </div>
         </div>
         <div class="flexbox-container">
-            <div class="item margins" style="padding-bottom: 0.75em;">
+            <div class="item-left margins" style="padding-bottom: 0.75em;">
                 <p style="margin: 0.5em 0;">Description</p>
                 <textarea name="description" required>@Model.activeTraining.description</textarea>
                 <br />
                 <button id="saveBtn" class="btn-light" style="border: 1px solid #718391;">Save Plan</button>
             </div>
-        </div>
     </form>
+    <div class="item-right margins">
+        <p style="margin: 0.5em 0;">Skills</p>
+        <table class="table table-striped table-light" style="width: 80%; margin: 0.5em auto;">
+            @foreach (var skill in Model.activeTraining.skills)
+            {
+                <tr>
+                    <td>@skill.skillName</td>
+                    <!--this should NOT delete the record, rather set the skill as inactive-->
+                    <td class="text-end">
+                        <form asp-page-handler="remove" method="post">
+                           <button class="btn btn-default" style="color:red;">Remove</button>
+                           <input type="hidden" name="skillId" value="@skill.skillID" />
+                           <input type="hidden" name="trainingPlanId" value="@Model.activeTraining.trainingPlanID" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </table>
+        <form id="planSkills" asp-page-handler="add" method="post">
+            <p>
+                <select name="skillId">
+                    @foreach (var inactiveSkill in Model.inactiveSkills)
+                    {
+                        <option value="@inactiveSkill.skillID">@inactiveSkill.skillName</option>
+                    }
+                </select>
+                <input type="hidden" name="trainingPlanId" value="@Model.activeTraining.trainingPlanID" />
+                <button class="btn-light" style="border: 1px solid #718391;">Add</button>
+            </p>
+        </form>
+    </div>
 </div>
 
 

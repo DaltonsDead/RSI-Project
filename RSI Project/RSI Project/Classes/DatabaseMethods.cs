@@ -414,7 +414,8 @@ namespace RSI_Project.Classes
                             while (reader.Read())
                             {
                                 Skills skill= new Skills();
-                                skill.skillName = reader.GetString(0);
+                                skill.skillID = reader.GetInt32(0);
+                                skill.skillName = reader.GetString(1);
                                 plan.skills.Add(skill);
                             }
                         }
@@ -644,6 +645,103 @@ namespace RSI_Project.Classes
                 Console.WriteLine(ex.Message);
             }
             return employee;
+        }
+
+        public static List<Skills> getSkills()
+        {
+            List<Skills> skills = new List<Skills>();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand allSkills = new SqlCommand("allSkills", connection))
+                    {
+                        allSkills.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = allSkills.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Skills skill = new Skills();
+                                skill.skillID = reader.GetInt32(0);
+                                skill.skillName = reader.GetString(1);
+
+                                skills.Add(skill);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return skills;
+        }
+
+        public static List<Skills> getInactivePlanSkills(int id)
+        {
+            List<Skills> skills = new List<Skills>();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand getInactivePlanSkills = new SqlCommand("getInactivePlanSkills", connection))
+                    {
+                        getInactivePlanSkills.CommandType = CommandType.StoredProcedure;
+                        getInactivePlanSkills.Parameters.Add(new SqlParameter("@ID", id));
+                        using (SqlDataReader reader = getInactivePlanSkills.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Skills skill = new Skills();
+                                skill.skillID = reader.GetInt32(0);
+                                skill.skillName = reader.GetString(1);
+
+                                skills.Add(skill);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return skills;
+        }
+
+        public static int setIfPlanSkillActive(int trainingPlanId, int active, int skillId, string updater)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand setIfActive = new SqlCommand("setIfPlanSkillActive", connection);
+                    setIfActive.CommandType = CommandType.StoredProcedure;
+                    setIfActive.Parameters.Add(new SqlParameter("@trainingPlanId", trainingPlanId));
+                    setIfActive.Parameters.Add(new SqlParameter("@skillId", skillId));
+                    setIfActive.Parameters.Add(new SqlParameter("@active", active));
+                    setIfActive.Parameters.Add(new SqlParameter("@updater", updater));
+                    setIfActive.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return 0;
         }
     }
 
