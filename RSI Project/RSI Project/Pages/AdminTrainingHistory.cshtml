@@ -1,9 +1,15 @@
 ﻿@page
-@model RSI_Project.Pages.TrainingModel
+@model RSI_Project.Pages.AdminTrainingHistoryModel
 @{
-    ViewData["Title"] = "Training Plan History";
 }
+<script>
+    function getParameter( paramName ){
+        let paramaters = new URLSearchParams(window.location.search);
+        return paramaters.get(paramName);
+        
+    }
 
+</script>
 <style>
     .flexbox-container {
         display: flex;
@@ -65,9 +71,9 @@
     }
 </style>
 <div class="text-center" style="font-size: 1.2em;">
-    <h1>@ViewData["Title"] for @Model.employee.fName @Model.employee.lName</h1>
+    <h1>Training History for @Model.employee.fName @Model.employee.lName</h1>
 
-    @foreach(var plan in @Model.plans)
+    @foreach (var plan in @Model.plans)
     {
         <br />
         <div class="flexbox-container">

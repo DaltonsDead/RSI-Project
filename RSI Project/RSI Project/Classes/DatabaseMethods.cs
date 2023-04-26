@@ -543,7 +543,49 @@ namespace RSI_Project.Classes
             }
             return statuses;
         }
+
+        public static EmployeeInfo EmpInfoByEmpNum(int id)
+        {
+            EmployeeInfo employee = new EmployeeInfo();
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand selectEmployeeByEmail = new SqlCommand("selectEmployeeByEmpNum", connection))
+                    {
+                        selectEmployeeByEmail.CommandType = CommandType.StoredProcedure;
+                        selectEmployeeByEmail.Parameters.Add(new SqlParameter("@employeeNum", id));
+                        using (SqlDataReader reader = selectEmployeeByEmail.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                employee.empIntID = reader.GetInt32(0);
+                                employee.userType = reader.GetInt32(1);
+                                employee.regionID = reader.GetInt32(2);
+                                employee.practiceArea = reader.GetInt32(3);
+                                employee.employeeID = reader.GetInt32(4);
+                                employee.fName = reader.GetString(5);
+                                employee.lName = reader.GetString(6);
+                                employee.email = reader.GetString(7);
+                                employee.inLabs = reader.GetSqlBinary(8);
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return employee;
+        }
     }
+
+
 
 
 }
