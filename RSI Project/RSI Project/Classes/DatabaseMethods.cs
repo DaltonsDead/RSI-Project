@@ -543,6 +543,68 @@ namespace RSI_Project.Classes
             }
             return statuses;
         }
+
+        public static void addTrainingPlan(int empId, int statusId, int mediumId, string description,
+            DateTime startDate, DateTime endDate, string createdBy)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand addTrainingPlan = new SqlCommand("addTrainingPlan", connection))
+                    {
+                        addTrainingPlan.CommandType = CommandType.StoredProcedure;
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@empId", empId));
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@statusId", statusId));
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@mediumId", mediumId));
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@description", description));
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@startDate", startDate));
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@endDate", endDate));
+                        addTrainingPlan.Parameters.Add(new SqlParameter("@createdBy", createdBy));
+                        addTrainingPlan.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void updateTrainingPlan(int trainingId, int statusId, int mediumId, string description,
+            DateTime startDate, DateTime endDate, string createdBy)
+        {
+            try
+            {
+                String connectionString = "Data Source=rsiproject1.database.windows.net;Initial Catalog=RSIproject;Persist Security Info=True;User ID=RSIadmin;Password=fuckSQL1!";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand updateTrainingPlan = new SqlCommand("updateTrainingPlan", connection))
+                    {
+                        updateTrainingPlan.CommandType = CommandType.StoredProcedure;
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@trainingPlanId", trainingId));
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@statusId", statusId));
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@mediumId", mediumId));
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@description", description));
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@startDate", startDate));
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@endDate", endDate));
+                        updateTrainingPlan.Parameters.Add(new SqlParameter("@createdBy", createdBy));
+                        updateTrainingPlan.ExecuteNonQuery();
+                    }
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 
 

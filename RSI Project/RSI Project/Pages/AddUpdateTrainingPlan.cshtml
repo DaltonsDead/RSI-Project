@@ -83,12 +83,13 @@
 
 <div class="text-center" style="font-size: 1.2em;">
     <form id="savePlan" asp-page-handler="save" method="post">
-        <input type="hidden" name="trainingID" value="@Model.activeTraining.trainingPlanID" />
+        <input type="hidden" name="trainingId" value="@Model.activeTraining.trainingPlanID" />
+        <input type="hidden" name="empId" value="@Model.employee.empIntID" />
         <div class="flexbox-container">
             <div class="item-left margins">
                 <p style="margin: 0.5em 0;">
                     Status:
-                    <select name="status">
+                    <select name="statusId">
                         @foreach (var status in Model.statuses)
                         {
                             if (Model.activeTraining.statusID == status.statusID)
@@ -106,7 +107,7 @@
             <div class="item-none margins">
                 <p style="margin: 0.5em 0;">
                     Medium:
-                    <select name="medium">
+                    <select name="mediumId">
                         @foreach (var medium in Model.media)
                         {
                             if (Model.activeTraining.mediumID == medium.mediumID)
@@ -126,7 +127,7 @@
                 <script>
                     if (@Model.activeTraining.trainingPlanID != 0)
                     {
-                        document.getElementById("startDate").value = @Model.activeTraining.startDate.ToString("yyyy-MM-dd");
+                        document.getElementById("startDate").value = "@Model.activeTraining.startDate.ToString("yyyy-MM-dd")";
                     }
                 </script>
             </div>
@@ -135,7 +136,7 @@
                 <script>
                     if (@Model.activeTraining.trainingPlanID != 0) 
                     {
-                        document.getElementById("endDate").value = @Model.activeTraining.endDate.ToString("yyyy-MM-dd");
+                        document.getElementById("endDate").value = "@Model.activeTraining.endDate.ToString("yyyy-MM-dd")";
                     }
                 </script>
             </div>
@@ -145,7 +146,7 @@
                 <p style="margin: 0.5em 0;">Description</p>
                 <textarea name="description" required>@Model.activeTraining.description</textarea>
                 <br />
-                <button class="btn-light" style="border: 1px solid #718391;">Save Plan</button>
+                <button id="saveBtn" class="btn-light" style="border: 1px solid #718391;">Save Plan</button>
             </div>
         </div>
     </form>
@@ -158,3 +159,4 @@
     <div class="particle particle-3"></div>
     <div class="particle particle-4"></div>
 </div>
+

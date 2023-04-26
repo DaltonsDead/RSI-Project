@@ -1,5 +1,5 @@
 ﻿@page
-@model WebApplication2.Pages.TrainingModel
+@model RSI_Project.Pages.TrainingModel
 @{
     ViewData["Title"] = "Training Plan History";
 }
@@ -91,7 +91,7 @@
                 <textarea disabled>@plan.description</textarea>
             </div>
             <div class="item-right margins">
-                <p style="margin: 0.5em 0;">SKills</p>
+                <p style="margin: 0.5em 0;">Skills</p>
                 @foreach (var skill in plan.skills)
                 {
                     <p>@skill.skillName</p>

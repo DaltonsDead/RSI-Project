@@ -20,9 +20,17 @@ namespace RSI_Project.Pages
             DatabaseMethods.getMediumAndStatus(activeTraining);
         }
 
-        public void OnPostSave()
+        public void OnPostSave(int trainingId, int empId, int statusId, int mediumId, string description, DateTime startDate, DateTime endDate)
         {
-
+            if(trainingId == 0)
+            {
+                DatabaseMethods.addTrainingPlan(empId, 1, mediumId, description, startDate, endDate, (User.Identity.Name.Substring(0, User.Identity.Name.IndexOf("@"))));
+            }
+            else
+            {
+                DatabaseMethods.updateTrainingPlan(trainingId, statusId, mediumId, description, startDate, endDate, (User.Identity.Name.Substring(0, User.Identity.Name.IndexOf("@"))));
+            }
+            Response.Redirect("/ViewActiveTraining");
         }
     }
 }
