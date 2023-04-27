@@ -5,72 +5,73 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RSI_Project
 build_property.RootNamespace = RSI_Project
-build_property.ProjectDir = C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project\
+build_property.ProjectDir = D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\aster\Source\Repos\DaltonsDead\RSI-Project\RSI Project\RSI Project
+build_property.MSBuildProjectDirectory = D:\College\Spring 2023\Advanced Programing Topics\Project1\RSI-1\Git\RSI Project\RSI Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/AddUpdateTrainingPlan.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/AddUpdateTrainingPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVXBkYXRlVHJhaW5pbmdQbGFuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Admin.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/AdminTrainingHistory.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/AdminTrainingHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5UcmFpbmluZ0hpc3RvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/EditPersonal.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/EditPersonal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFBlcnNvbmFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Error.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Index.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Personal.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Personal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Privacy.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Shared/_LoginPartial.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/TrainingHistory.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/TrainingHistory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaW5pbmdIaXN0b3J5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/ViewActiveTraining.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/ViewActiveTraining.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0FjdGl2ZVRyYWluaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/_ViewImports.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/_ViewStart.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/aster/Source/Repos/DaltonsDead/RSI-Project/RSI Project/RSI Project/Pages/Shared/_Layout.cshtml]
+[D:/College/Spring 2023/Advanced Programing Topics/Project1/RSI-1/Git/RSI Project/RSI Project/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8tab6l05it
